@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "FeedViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,10 +18,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.rootViewController = [[RootViewController alloc] init];
-    self.window.rootViewController = self.rootViewController;
+    
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[[FeedViewController alloc] init]];
+    
+    self.window.rootViewController = nav;
+    self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    return true; //yes. please.
+    
+    
+    return true;
 }
 
 
